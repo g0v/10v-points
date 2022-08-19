@@ -1,5 +1,5 @@
 [
-  { "title": "專案一號", "description": "單程票的一些些說明\n可以換行，但建議至多兩段就好", "coverImg": "/covers/project1.jpeg", "callbackUrl": "http://localhost:5174/example/one-way/", "callbackType": "單程票" },
-  { "title": "專案二號", "description": "單程直播票\n一些些說明\n三段就會變成這個樣子", "coverImg": "/covers/project2.jpg", "callbackUrl": "http://localhost:5174/example/one-way-live/", "callbackType": "單程直播票" },
-  { "title": "專案三號", "description": "去回票\n一些些說明", "coverImg": "/covers/project1.jpeg", "callbackUrl": "http://localhost:5174/example/round-trip/", "callbackType": "來回票" }
+  { "title": "專案一號", "description": "單程票的一些些說明\n可以換行，但建議至多兩段就好", "coverImg": "/covers/project1.jpeg", "callbackUrl": "https://g0v.github.io/10v-points/example/one-way/", "callbackType": "單程票" },
+  { "title": "專案二號", "description": "單程直播票\n一些些說明\n三段就會變成這個樣子", "coverImg": "/covers/project2.jpg", "callbackUrl": "https://g0v.github.io/10v-points/example/one-way-live/", "callbackType": "單程直播票" },
+  { "title": "專案三號", "description": "去回票\n一些些說明", "coverImg": "/covers/project1.jpeg", "callbackUrl": "https://g0v.github.io/10v-points/example/round-trip/", "callbackType": "來回票" }
 ]
