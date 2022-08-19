@@ -1,15 +1,12 @@
 <script>
   import { onMount, tick } from 'svelte'
   import { page } from '$app/stores';
-  import { makeId } from '$lib/utils'
+  import { makeId, g0vTokenKey, finishedMissionKey, initFinishedMissions } from '$lib/utils'
   import partnerMap from '$lib/assets/partners.json';
   const partner = partnerMap.find(partner => partner.title === $page.params.partner)
   const pageTitle = partner?.title || '？'
 
-  const g0vTokenKey = '10vpoints'
   let g0vToken = ''
-
-  const finishedMissionKey = '10vpoints_mission'
   let finisedMissions = []
 
   const description = (partner?.description || '').split('\n')
@@ -69,11 +66,7 @@
       localStorage.setItem(g0vTokenKey, g0vToken)
     }
 
-    try {
-      finisedMissions = JSON.parse(localStorage.getItem(finishedMissionKey) || '[]')
-    } catch {
-      // someone is hacking us, just use default
-    }
+    finisedMissions = initFinishedMissions()
     isTaskDone = finisedMissions.includes(pageTitle)
 
     callback.searchParams.set(g0vTokenKey, g0vToken)

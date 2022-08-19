@@ -1,3 +1,14 @@
+export const g0vTokenKey = '10vpoints'
+
+export const finishedMissionKey = '10vpoints_mission'
+
+export function initFinishedMissions () {
+    try {
+        return JSON.parse(localStorage.getItem(finishedMissionKey) || '[]')
+    } catch {
+        return []
+    }
+}
 
 export function makeId (length) {
     let result           = '';

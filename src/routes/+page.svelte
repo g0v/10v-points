@@ -16,28 +16,44 @@
           .aspect-ratio--object.no-repeat.cover(
             style="background-image: url('{partner.coverImg}')"
           )
-            .index__partner.flex.flex-column.justify-end.pa3.white.h-100.tr
-              h2.mv0.f4.fw7.flex.items-center.justify-end
+            .index__partner.flex.flex-column.justify-end.pt3.white.h-100.tr
+              h2.mv0.f4.fw7.flex.items-center.justify-end.ph3
                 i.fa-solid.fa-hand-spock.f5.mr2
                 | {partner.title}
-              .mt3.f6
+              .mt3.f6.ph3
                 +each('partner.description as line')
                   p.lh-copy.mb1.mt0 {line}
+              +if('partner.isFinished')
+                .index__done.mt3.flex.items-center.justify-end.f4.pa3
+                  i.fa-solid.fa-check.mr2
+                  .white 已完成
+                +else()
+                  .pb3
+
 
       
 </template>
 <script>
+  import { onMount } from 'svelte'
   import partnerRawList from '$lib/assets/partners.json';
+  import { finishedMissionKey, initFinishedMissions } from '$lib/utils'
 
   const title = 'ASSEMBLE!專案者聯盟！'
 
-  const partnerList = partnerRawList.map((partner) => {
+  $: partnerList = partnerRawList.map((partner) => {
     return {
       ...partner,
       coverImg: `/10v-points${partner.coverImg}`,
       description: partner.description.split('\n'),
-      link: `/10v-points/partner/${partner.title}`
+      link: `/10v-points/partner/${partner.title}`,
+      isFinished: finisedMissions.includes(partner.title)
     }
+  })
+
+  let finisedMissions = []
+
+  onMount(() => {
+    finisedMissions = initFinishedMissions()
   })
 </script>
 <svelte:head>
@@ -58,6 +74,9 @@
   &__partner {
     background: linear-gradient(180deg, #fff0 20%, #222a 60%); 
     text-shadow: 0 0 5px black;
+  }
+  &__done {
+    background: #fff4;
   }
 }
 </style>
