@@ -32,6 +32,6 @@
     g0vToken = urlParams.get(g0vTokenKey)
   })
   
-  $: callback = `${siteUrl}/專案三號/?${g0vTokenKey}=${encodeURIComponent(g0vToken)}` 
+  $: callback = `${siteUrl}/partner/專案三號/?${g0vTokenKey}=${encodeURIComponent(g0vToken)}` 
 </script>
   
