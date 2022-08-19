@@ -11,7 +11,8 @@
 <template lang="pug">
   .index.mw7.mv4.ph3.center
     +if('!partner')
-      h1.mv5 找不到「{$page.params.partner}」呦 🙄🙄🙄 ，是誰帶你來這裡的？
+      h1.f1.tc.lh-title.mb4.mt5 找不到「{$page.params.partner}」呦 🙄 🙄 🙄
+      p.f3.dark-gray.tc 是誰帶你來這裡的呢？
       +else()
         h1 嗨！ {pageTitle}
         .gray.lh-copy {JSON.stringify(partner)}

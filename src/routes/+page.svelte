@@ -27,7 +27,6 @@
       
 </template>
 <script>
-  import 'tachyons/css/tachyons.css'
   import partnerRawList from '$lib/assets/partners.json';
 
   const title = 'ASSEMBLE!專案者聯盟！'
