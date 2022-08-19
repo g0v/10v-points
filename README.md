@@ -1,5 +1,7 @@
 # 十週年生日趴-集點互動式闖關共筆
 
+- [Project notes](https://g0v.hackmd.io/@eaKkAb8HRjOKJ4erd2STnA/10Anni-Party/https%3A%2F%2Fg0v.hackmd.io%2FHkZ8pUAmTD2chtBne4t4mA)
+
 ## Environment
 
 1. node 16+
