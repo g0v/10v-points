@@ -10,7 +10,8 @@
   let finisedMissions = []
 
   const description = (partner?.description || '').split('\n')
-  const coverImg = `/10v-points${partner?.coverImg}`
+  // const coverImg = `/10v-points${partner?.coverImg}`
+  const coverImg = partner?.coverImg
   let callback = new URL('https://10th.g0v.tw/')
 
   try {

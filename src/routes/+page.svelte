@@ -43,7 +43,7 @@
   $: partnerList = partnerRawList.map((partner) => {
     return {
       ...partner,
-      coverImg: `/10v-points${partner.coverImg}`,
+      // coverImg: `/10v-points${partner.coverImg}`,
       description: partner.description.split('\n'),
       link: `/10v-points/partner/${partner.title}`,
       isFinished: finisedMissions.includes(partner.title)
