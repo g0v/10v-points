@@ -34,8 +34,9 @@
   const partnerList = partnerRawList.map((partner) => {
     return {
       ...partner,
+      coverImg: `/10v-points${partner.coverImg}`,
       description: partner.description.split('\n'),
-      link: `/partner/${partner.title}`
+      link: `/10v-points/partner/${partner.title}`
     }
   })
 </script>
