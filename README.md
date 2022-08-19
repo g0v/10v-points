@@ -1,5 +1,9 @@
 # 十週年生日趴-集點互動式闖關共筆
 
+## Environment
+
+1. node 16+
+
 ## Developing
 
 Start a development server:
