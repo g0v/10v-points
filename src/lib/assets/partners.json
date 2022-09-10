@@ -2,7 +2,7 @@
   {
     "title": "專案一號",
     "description": "單程票的一些些說明\n可以換行，但建議至多兩段就好",
-    "coverImg": "https://cdn2.thecatapi.com/images/5jb.gif",
+    "coverImg": "https://cdn2.thecatapi.com/images/4lt.gif",
     "siteUrl": "https://ddio.io/ddio+0",
     "callbackUrl": "https://g0v.github.io/10v-points/example/one-way/",
     "callbackType": "單程票"
@@ -10,7 +10,7 @@
   {
     "title": "專案二號",
     "description": "單程直播票\n一些些說明\n三段就會變成這個樣子",
-    "coverImg": "https://cdn2.thecatapi.com/images/6uu.jpg",
+    "coverImg": "https://cdn2.thecatapi.com/images/7nj.jpg",
     "siteUrl": "ddio.io/ddio-1",
     "callbackUrl": "https://g0v.github.io/10v-points/example/one-way-live/",
     "callbackType": "單程直播票"
@@ -18,7 +18,7 @@
   {
     "title": "專案三號",
     "description": "單程票：闖關遊戲將網址開至新視窗，點擊網址後就算闖關完成。適合需要引導瀏覽者開啟其他 App ，例如 Line 的專案。\n單程直播票：闖關遊戲將網址開在內嵌視窗（iframe）中，網頁打開就算闖關完成。適合已有現成網頁的專案。",
-    "coverImg": "https://cdn2.thecatapi.com/images/a97.jpg",
+    "coverImg": "https://cdn2.thecatapi.com/images/daj.jpg",
     "siteUrl": "https://g0v.github.io/10v-points",
     "callbackUrl": "https://g0v.github.io/10v-points/example/round-trip/",
     "callbackType": "去回票"
@@ -26,7 +26,7 @@
   {
     "title": "要來十週年看看嗎？",
     "description": "我們家的零宇宙會大爆炸呦！",
-    "coverImg": "https://cdn2.thecatapi.com/images/c4u.jpg",
+    "coverImg": "https://cdn2.thecatapi.com/images/MTYyODkzNQ.jpg",
     "siteUrl": "https://g0v.hackmd.io/@eaKkAb8HRjOKJ4erd2STnA/10Anni-Party/https%3A%2F%2Fg0v.hackmd.io%2FziZP_AsAQUm8Ayxzdm6vzA",
     "callbackUrl": "https://g0v.hackmd.io/@eaKkAb8HRjOKJ4erd2STnA/10Anni-Party/",
     "callbackType": "單程票"
@@ -34,7 +34,7 @@
   {
     "title": "Cofacts 真的假的 - 訊息回報機器人與查證協作社群",
     "description": "LINE 加 @cofacts 好友，完成歡迎訊息中的使用教學。",
-    "coverImg": "https://cdn2.thecatapi.com/images/MTc3MTc4Mw.gif",
+    "coverImg": "https://cdn2.thecatapi.com/images/MTY4NDM4Mg.jpg",
     "siteUrl": "https://cofacts.tw/hack",
     "callbackUrl": "https://line.me/R/ti/p/%40cofacts",
     "callbackType": "單程票"
@@ -42,7 +42,7 @@
   {
     "title": "disfactory",
     "description": "我們需要你玩完一輪「大家來找廠」，幫我們辨認農地上有沒有新增建物！",
-    "coverImg": "https://cdn2.thecatapi.com/images/MTkwMjc4Mw.jpg",
+    "coverImg": "https://cdn2.thecatapi.com/images/BZ59tdOo6.jpg",
     "siteUrl": "https://g0v.hackmd.io/Lk9KiihIS7qQU6iZUTptWQ",
     "callbackUrl": "https://spot.disfactory.tw/#/",
     "callbackType": "單程直播票"
