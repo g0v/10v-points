@@ -2,7 +2,7 @@
   {
     "title": "專案一號",
     "description": "單程票的一些些說明\n可以換行，但建議至多兩段就好",
-    "coverImg": "https://cdn2.thecatapi.com/images/1ac.gif",
+    "coverImg": "https://cdn2.thecatapi.com/images/3bl.jpg",
     "siteUrl": "https://ddio.io/ddio+0",
     "callbackUrl": "https://g0v.github.io/10v-points/example/one-way/",
     "callbackType": "單程票"
@@ -10,7 +10,7 @@
   {
     "title": "專案二號",
     "description": "單程直播票\n一些些說明\n三段就會變成這個樣子",
-    "coverImg": "https://cdn2.thecatapi.com/images/274.jpg",
+    "coverImg": "https://cdn2.thecatapi.com/images/9pp.jpg",
     "siteUrl": "ddio.io/ddio-1",
     "callbackUrl": "https://g0v.github.io/10v-points/example/one-way-live/",
     "callbackType": "單程直播票"
@@ -18,7 +18,7 @@
   {
     "title": "專案三號",
     "description": "單程票：闖關遊戲將網址開至新視窗，點擊網址後就算闖關完成。適合需要引導瀏覽者開啟其他 App ，例如 Line 的專案。\n單程直播票：闖關遊戲將網址開在內嵌視窗（iframe）中，網頁打開就算闖關完成。適合已有現成網頁的專案。",
-    "coverImg": "https://cdn2.thecatapi.com/images/3rk.png",
+    "coverImg": "https://cdn2.thecatapi.com/images/b3o.jpg",
     "siteUrl": "https://g0v.github.io/10v-points",
     "callbackUrl": "https://g0v.github.io/10v-points/example/round-trip/",
     "callbackType": "去回票"
@@ -26,7 +26,7 @@
   {
     "title": "要來十週年看看嗎？",
     "description": "我們家的零宇宙會大爆炸呦！",
-    "coverImg": "https://cdn2.thecatapi.com/images/9bs.jpg",
+    "coverImg": "https://cdn2.thecatapi.com/images/bea.jpg",
     "siteUrl": "https://g0v.hackmd.io/@eaKkAb8HRjOKJ4erd2STnA/10Anni-Party/https%3A%2F%2Fg0v.hackmd.io%2FziZP_AsAQUm8Ayxzdm6vzA",
     "callbackUrl": "https://g0v.hackmd.io/@eaKkAb8HRjOKJ4erd2STnA/10Anni-Party/",
     "callbackType": "單程票"
@@ -34,7 +34,7 @@
   {
     "title": "Cofacts 真的假的 - 訊息回報機器人與查證協作社群",
     "description": "LINE 加 @cofacts 好友，完成歡迎訊息中的使用教學。",
-    "coverImg": "https://cdn2.thecatapi.com/images/aul.jpg",
+    "coverImg": "https://cdn2.thecatapi.com/images/bmu.jpg",
     "siteUrl": "https://cofacts.tw/hack",
     "callbackUrl": "https://line.me/R/ti/p/%40cofacts",
     "callbackType": "單程票"
@@ -42,7 +42,7 @@
   {
     "title": "disfactory",
     "description": "我們需要你玩完一輪「大家來找廠」，幫我們辨認農地上有沒有新增建物！",
-    "coverImg": "https://cdn2.thecatapi.com/images/b36.jpg",
+    "coverImg": "https://cdn2.thecatapi.com/images/c8r.jpg",
     "siteUrl": "https://g0v.hackmd.io/Lk9KiihIS7qQU6iZUTptWQ",
     "callbackUrl": "https://spot.disfactory.tw/#/",
     "callbackType": "單程直播票"
@@ -50,7 +50,7 @@
   {
     "title": "g0v Podcast",
     "description": "邀請使用者到 apple podcast 上留言評論，分享聽眾對於節目的心得或未來想聽到的內容",
-    "coverImg": "https://cdn2.thecatapi.com/images/cg3.jpg",
+    "coverImg": "https://cdn2.thecatapi.com/images/dt5.jpg",
     "siteUrl": "https://g0v.hackmd.io/@podcast/main",
     "callbackUrl": "https://podcasts.apple.com/tw/podcast/g0v-underground-%E9%9B%B6%E6%99%82%E9%9B%BB%E5%8F%B0/id1612476442?l=en",
     "callbackType": "去回票"
@@ -58,7 +58,7 @@
   {
     "title": "零時小學校",
     "description": "進入 2022 專案孵化競賽提案列表，選擇一個提案給予回饋吧！",
-    "coverImg": "https://cdn2.thecatapi.com/images/d03.jpg",
+    "coverImg": "https://cdn2.thecatapi.com/images/MjA2NjAyOA.jpg",
     "siteUrl": "https://sch001.g0v.tw/",
     "callbackUrl": "https://sch001.g0v.tw/dash/brd/sch001-2022/list",
     "callbackType": "單程直播票"
@@ -66,7 +66,7 @@
   {
     "title": "島島阿學",
     "description": "點選島島阿學首頁右上角「新增資源」，分享一個你很推薦的學習資源吧！",
-    "coverImg": "https://cdn2.thecatapi.com/images/EacqcTsmf.jpg",
+    "coverImg": "https://cdn2.thecatapi.com/images/6vPgXY9tb.jpg",
     "siteUrl": "https://www.daoedu.tw/",
     "callbackUrl": "https://www.daoedu.tw/",
     "callbackType": "單程直播票"
