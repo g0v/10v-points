@@ -11,6 +11,7 @@ const csvUrl = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vRnwi4M1rK17sNjF
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename)
 const TARGET_PATH = path.join(__dirname, '../src/lib/assets/partners.json')
+const COVER_PATH = path.join(__dirname, '../src/lib/assets/partnerCovers.json')
 
 async function main () {
   let rows = []
@@ -24,11 +25,19 @@ async function main () {
       .on('end', resolve)
     })
   // TODO: download cover image from google drive
+  const coverMap = JSON.parse(fs.readFileSync(COVER_PATH))
   const randomImages = await axios.get(`https://api.thecatapi.com/v1/images/search?limit=${rows.length}`)
   rows = rows.map((row, i) => {
+
+    let coverImg = coverMap[row.title]
+    if (coverImg) {
+      coverImg = `/10v-points/covers/${coverImg}`
+    } else {
+      coverImg = randomImages.data[i].url
+    }
     return {
       ...row,
-      coverImg: randomImages.data[i].url
+      coverImg
     }
   })
   fs.writeFileSync(TARGET_PATH, JSON.stringify(rows, null, '  '))
