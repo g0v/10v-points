@@ -96,7 +96,7 @@
             h1.f1.fw7.mt5.tc
               i.fa-solid.fa-check.mr2
               span.gray {pageTitle}
-              span.black 已完成！
+              span.black &nbsp;已完成！
         .mv3
           .partner__cover.center
             .aspect-ratio.aspect-ratio--1x1.center
@@ -104,8 +104,9 @@
                 style="background-image: url('{coverImg}')"
               )
                 .flex.flex-column.justify-center.items-center.h-100
-                  +each('description as line')
-                    p.lh-copy.mb1.mt0.tc.white {line}
+                  .partner__desp.ph3.pv4
+                    +each('description as line')
+                      p.lh-copy.mt0.tc.white.f4 {line}
         .partner__cta.tc
           +if('partner.callbackType === "單程直播票"')
             button(on:click="{openIframe}")
@@ -126,11 +127,19 @@
   &__cover {
     max-width: 26rem;
     .aspect-ratio--object > div {
-      background-color: #0008;
+      background-color: #0004;
     }
     p {
-      text-shadow: 0 0 5px black;
+      // text-shadow: 0 0 5px black;
+      margin-bottom: 0;
+      &:not(:last-child) {
+        margin-bottom: 0.5rem;
+      }
     }
+  }
+  &__desp {
+    // backdrop-filter: grayscale(0.2) blur(4px);
+    backdrop-filter: brightness(0.8) grayscale(0.5) contrast(0.8) blur(3px);
   }
   &__cta {
     button, a {

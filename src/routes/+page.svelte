@@ -16,15 +16,15 @@
           .aspect-ratio--object.no-repeat.cover(
             style="background-image: url('{partner.coverImg}')"
           )
-            .index__partner.flex.flex-column.justify-end.pt3.white.h-100.tr
-              h2.mv0.f4.fw7.flex.items-center.justify-end.ph3
-                i.fa-solid.fa-hand-spock.f5.mr2
-                | {partner.title}
-              .mt3.f6.ph3
-                +each('partner.description as line')
-                  p.lh-copy.mb1.mt0 {line}
+            .index__partner.flex.flex-column.pt3.white.h-100.tc
+              .flex-auto.flex.flex-column.justify-center
+                h2.mv0.lh-title.f2.fw7.ph3
+                  | {partner.title}
+                .mt3.f6.ph3
+                  +each('partner.description as line')
+                    p.lh-copy.mb1.mt0.f4 {line}
               +if('partner.isFinished')
-                .index__done.mt3.flex.items-center.justify-end.f4.pa3
+                .index__done.flex-none.mt3.flex.items-center.justify-end.f4.pa3
                   i.fa-solid.fa-check.mr2
                   .white 已完成
                 +else()
@@ -72,11 +72,13 @@
     }
   }
   &__partner {
-    background: linear-gradient(180deg, #fff0 20%, #222a 60%); 
+    background: #222a;
+    backdrop-filter: blur(6px);
     text-shadow: 0 0 5px black;
   }
   &__done {
     background: #fff4;
+    justify-self: end;
   }
 }
 </style>
