@@ -5,6 +5,7 @@
   import partnerMap from '$lib/assets/partners.json';
   const partner = partnerMap.find(partner => partner.title === $page.params.partner)
   const pageTitle = partner?.title || '？'
+  const bgImg = `/10v-points/bg/0${Math.round(Math.random() * 3) + 1}.png`
 
   let g0vToken = ''
   let finisedMissions = []
@@ -85,7 +86,8 @@
   <title>{pageTitle} x ASSEMBLE!專案者聯盟！</title>
 </svelte:head>
 <template lang="pug">
-  #partner.partner.mw7.mv4.ph3.center
+  .partner__bg.fixed.cover.bg-bottom(style="background-image: url('{bgImg}')")
+  #partner.partner.mw7.mv4.ph3.center.relative.z-1
     +if('!partner?.title')
       h1.f1.tc.lh-title.mb4.mt5 找不到「{$page.params.partner}」呦 🙄 🙄 🙄
       p.f3.dark-gray.tc 是誰帶你來這裡的呢？
@@ -96,7 +98,7 @@
             h1.f1.fw7.mt5.tc
               i.fa-solid.fa-check.mr2
               span.gray {pageTitle}
-              span.black 已完成！
+              span.black &nbsp;已完成！
         .mv3
           .partner__cover.center
             .aspect-ratio.aspect-ratio--1x1.center
@@ -104,8 +106,9 @@
                 style="background-image: url('{coverImg}')"
               )
                 .flex.flex-column.justify-center.items-center.h-100
-                  +each('description as line')
-                    p.lh-copy.mb1.mt0.tc.white {line}
+                  .partner__desp.ph3.pv4
+                    +each('description as line')
+                      p.lh-copy.mt0.tc.white.f4 {line}
         .partner__cta.tc
           +if('partner.callbackType === "單程直播票"')
             button(on:click="{openIframe}")
@@ -126,11 +129,19 @@
   &__cover {
     max-width: 26rem;
     .aspect-ratio--object > div {
-      background-color: #0008;
+      background-color: #0004;
     }
     p {
-      text-shadow: 0 0 5px black;
+      // text-shadow: 0 0 5px black;
+      margin-bottom: 0;
+      &:not(:last-child) {
+        margin-bottom: 0.5rem;
+      }
     }
+  }
+  &__desp {
+    // backdrop-filter: grayscale(0.2) blur(4px);
+    backdrop-filter: brightness(0.8) grayscale(0.5) contrast(0.8) blur(3px);
   }
   &__cta {
     button, a {
@@ -166,6 +177,15 @@
 
   &__embedded {
     border: none;
+  }
+
+  &__bg {
+    filter: hue-rotate(120deg) contrast(0.5) opacity(0.2) blur(6px);
+    bottom: -35vh;
+    left: 0px;
+    height: 120vh;
+    width: 100vw;
+    z-index: 0;
   }
 }
 </style>
