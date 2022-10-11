@@ -1,14 +1,15 @@
 <script>
   import { onMount, tick } from 'svelte'
-  import { page } from '$app/stores';
-  import { makeId, g0vTokenKey, finishedMissionKey, initFinishedMissions } from '$lib/utils'
+  import { page } from '$app/stores'
+  import ProgressInfo from '$lib/components/ProgressInfo.svelte'
+  import { finishedMissions, isAllMissionsFinished } from '$lib/stores'
+  import { makeId, g0vTokenKey, finishedMissionKey, recordProgress, initStore } from '$lib/utils'
   import partnerMap from '$lib/assets/partners.json';
   const partner = partnerMap.find(partner => partner.title === $page.params.partner)
   const pageTitle = partner?.title || '？'
   const bgImg = `/10v-points/bg/0${Math.round(Math.random() * 3) + 1}.png`
 
   let g0vToken = ''
-  let finisedMissions = []
 
   const description = (partner?.description || '').split('\n')
   // const coverImg = `/10v-points${partner?.coverImg}`
@@ -22,8 +23,11 @@
   }
 
   let iframeSize = {}
-  let isTaskDone = false
   let isLiveStarted = false
+  let isTaskDoneOnInit = true
+  $: isTaskDone = $finishedMissions.includes(pageTitle)
+  $: isTaskDoneNow = !isTaskDoneOnInit && isTaskDone
+  $: isNextTipVisible = isTaskDoneNow && !$isAllMissionsFinished
 
   async function openIframe () {
     isLiveStarted = true
@@ -36,15 +40,15 @@
     // mark as done automatically
     setTimeout(() => {
       markAsDone()
-    }, 5000)
+    }, 10000)
   }
 
   function markAsDone () {
-    if (!finisedMissions.includes(pageTitle)) {
-      finisedMissions.push(pageTitle)
+    if (!$finishedMissions.includes(pageTitle)) {
+      finishedMissions.set([...$finishedMissions, pageTitle])
+      recordProgress(g0vToken, pageTitle)
     }
-    localStorage.setItem(finishedMissionKey, JSON.stringify(finisedMissions))
-    isTaskDone = true
+    localStorage.setItem(finishedMissionKey, JSON.stringify($finishedMissions))
   }
 
   function handleCallbackClicked () {
@@ -55,6 +59,8 @@
     }
   }
 
+  initStore()
+
   onMount(() => {
     const wrapper = document.querySelector('#partner')
     iframeSize = {
@@ -64,12 +70,9 @@
 
     g0vToken = localStorage.getItem(g0vTokenKey) || ''
     if (!g0vToken) {
-      g0vToken = makeId(10)
+      g0vToken = makeId(9)
       localStorage.setItem(g0vTokenKey, g0vToken)
     }
-
-    finisedMissions = initFinishedMissions()
-    isTaskDone = finisedMissions.includes(pageTitle)
 
     callback.searchParams.set(g0vTokenKey, g0vToken)
     // not sure if there's better way to trigger reactivity XD
@@ -79,6 +82,8 @@
     if (searchParams.get(g0vTokenKey) === g0vToken) {
       markAsDone()
     }
+
+    isTaskDoneOnInit = $finishedMissions.includes(pageTitle)
   })
 </script>
 
@@ -87,7 +92,7 @@
 </svelte:head>
 <template lang="pug">
   .partner__bg.fixed.cover.bg-bottom(style="background-image: url('{bgImg}')")
-  #partner.partner.mw7.mv4.ph3.center.relative.z-1
+  #partner.partner.mw7.mt4.mb5.ph3.center.relative.z-1
     +if('!partner?.title')
       h1.f1.tc.lh-title.mb4.mt5 找不到「{$page.params.partner}」呦 🙄 🙄 🙄
       p.f3.dark-gray.tc 是誰帶你來這裡的呢？
@@ -99,6 +104,8 @@
               i.fa-solid.fa-check.mr2
               span.gray {pageTitle}
               span.black &nbsp;已完成！
+            +if('!$isAllMissionsFinished')
+              p.f3.tc.lh-copy 只差一點點，來尋找更多星球吧！
         .mv3
           .partner__cover.center
             .aspect-ratio.aspect-ratio--1x1.center
@@ -123,6 +130,11 @@
         +if('isLiveStarted')
           #partner__embedded.partner__embedded.mv4
             iframe(height="{iframeSize.height}" width="{iframeSize.width}" src="{callback}")
+  .partner__next.fixed.bottom-0.left-0.right-0.pa3.z-1(class="{isNextTipVisible ? 'o-100': 'o-0'}")
+    p.f4.tc.lh-copy.mv0 只差一點點，來尋找更多星球吧！
+  +if('isAllMissionsFinished')
+    .partner__done.pa3.relative.z-1
+      ProgressInfo
 </template>
 <style lang="scss">
 .partner {
@@ -186,6 +198,11 @@
     height: 120vh;
     width: 100vw;
     z-index: 0;
+  }
+
+  &__next {
+    backdrop-filter: brightness(0.8) grayscale(0.5) contrast(0.8) blur(3px);
+    transition: 300ms ease-in-out;
   }
 }
 </style>
