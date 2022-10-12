@@ -26,7 +26,7 @@
 
   const awardEndpoint = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vRnwi4M1rK17sNjFWlwkiSozz401CMvZnxmto53ipL9fIPoq9GPUSWRZ1c4oDCSUZkWbLyhFfyUw7AK/pub?gid=1375817865&single=true&output=csv'
   const now = new Date()
-  const isOnAnnouncing = now > new Date('2022-10-23 15:50:00')
+  const isOnAnnouncing = now > new Date('2022-09-23 15:50:00')
   const nAwardPerGroup = 5
   let nAwardToShow = 20
 
