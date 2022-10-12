@@ -15,7 +15,8 @@
             | 找這些QR code 進入各個闖關活動，完成任務後就可以獲得獎勵！
     .index__partnerList
       +each('$partnerList as partner')
-        a.aspect-ratio.aspect-ratio--1x1.pointer(href="{partner.link}")
+        // disallow hyper link for production
+        .aspect-ratio.aspect-ratio--1x1.pointer(href="{partner.link}")
           .aspect-ratio--object.no-repeat.cover(
             style="background-image: url('{partner.coverImg}')"
           )
