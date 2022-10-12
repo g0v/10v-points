@@ -4,7 +4,7 @@ import axios from 'axios'
 import qs from 'qs'
 
 // simple way to refresh local storage data
-const dateNow = ''// (new Date()).getDate()
+const dateNow = (new Date()).getDate()
 
 export const g0vTokenKey = `10vpoints_${dateNow}`
 
