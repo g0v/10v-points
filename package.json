@@ -29,6 +29,7 @@
 	},
 	"type": "module",
 	"dependencies": {
+		"qs": "^6.11.0",
 		"tachyons": "^4.12.0"
 	}
 }

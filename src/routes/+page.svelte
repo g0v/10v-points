@@ -1,17 +1,20 @@
 <template lang="pug">
   .index.mw7.mv4.ph3.center
-    h1.f1.fw7.tc {title}
-    .mv4.mw6.lh-copy.center
-      p
-        | 來派對除了吃吃喝喝，當然是要玩遊戲的吧！g0v十週年也不例外，在今年這個十週年的盛會，
-        | 我們也跟g0v社群中不同專案的坑主合作，讓來參加派對的參與者除了吃喝玩樂，也可以參與集
-        | 點互動式闖關遊戲，除了更加認識不同的專案，也能貢獻自己的小小力量，一起召喚十週年多重
-        | 宇宙的專案者聯盟！
-      p
-        | 我們在十週年生日趴的場地中設置了跟不同專案有關的闖關QR code，參與者可以在會場中尋
-        | 找這些QR code 進入各個闖關活動，完成任務後就可以獲得獎勵！
+    +if('isAllFinished')
+      ProgressInfo
+      +else()
+        h1.f1.fw7.tc {title}
+        .mv4.mw6.lh-copy.center
+          p
+            | 來派對除了吃吃喝喝，當然是要玩遊戲的吧！g0v十週年也不例外，在今年這個十週年的盛會，
+            | 我們也跟g0v社群中不同專案的坑主合作，讓來參加派對的參與者除了吃喝玩樂，也可以參與集
+            | 點互動式闖關遊戲，除了更加認識不同的專案，也能貢獻自己的小小力量，一起召喚十週年多重
+            | 宇宙的專案者聯盟！
+          p
+            | 我們在十週年生日趴的場地中設置了跟不同專案有關的闖關QR code，參與者可以在會場中尋
+            | 找這些QR code 進入各個闖關活動，完成任務後就可以獲得獎勵！
     .index__partnerList
-      +each('partnerList as partner')
+      +each('$partnerList as partner')
         a.aspect-ratio.aspect-ratio--1x1.pointer(href="{partner.link}")
           .aspect-ratio--object.no-repeat.cover(
             style="background-image: url('{partner.coverImg}')"
@@ -29,32 +32,19 @@
                   .white 已完成
                 +else()
                   .pb3
-
-
-      
 </template>
 <script>
-  import { onMount } from 'svelte'
+  import { partnerList } from '$lib/stores'
   import partnerRawList from '$lib/assets/partners.json';
-  import { finishedMissionKey, initFinishedMissions } from '$lib/utils'
+  import { initStore } from '$lib/utils'
+  import ProgressInfo from '$lib/components/ProgressInfo.svelte'
 
   const title = 'ASSEMBLE!專案者聯盟！'
 
-  $: partnerList = partnerRawList.map((partner) => {
-    return {
-      ...partner,
-      // coverImg: `/10v-points${partner.coverImg}`,
-      description: partner.description.split('\n'),
-      link: `/10v-points/partner/${partner.title}`,
-      isFinished: finisedMissions.includes(partner.title)
-    }
-  })
+  $: isAllFinished = $partnerList.every(partner => partner.isFinished)
 
-  let finisedMissions = []
+  initStore()
 
-  onMount(() => {
-    finisedMissions = initFinishedMissions()
-  })
 </script>
 <svelte:head>
   <title>{title}</title>
@@ -63,10 +53,10 @@
 .index {
   &__partnerList {
     display: grid;
+    // display: none;
     row-gap: 1rem;
 
     @media screen and (min-width: 30em) {
-      display: grid;
       grid-template-columns: 1fr 1fr;
       column-gap: 1rem;
     }
