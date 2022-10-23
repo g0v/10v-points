@@ -41,10 +41,10 @@
   },
   {
     "title": "CourseAPI 開放式課程資訊匯流學院",
-    "description": "前往使用 CourseAPI ，協助填寫一份問券。",
+    "description": "前往使用 CourseAPI ，試著用一個關鍵字查詢相關課程。",
     "siteUrl": "https://toedu.notion.site/CourseAPI-4e8faffe36c144058176dec509f15366",
-    "callbackUrl": "https://g0v.hackmd.io/76lTGX03TsG9w4InrZlrEQ",
-    "callbackType": "單程票",
+    "callbackUrl": "https://courseapi.org",
+    "callbackType": "單程直播票",
     "coverImg": "/10v-points/covers/courseApi.png"
   }
 ]
