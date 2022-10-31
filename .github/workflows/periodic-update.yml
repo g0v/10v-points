@@ -1,9 +1,9 @@
 name: periodic-update
 
-on:
-  workflow_dispatch:
-  schedule: 
-    - cron: '* 21 * * *'
+# on:
+#   workflow_dispatch:
+#   schedule: 
+#     - cron: '* 21 * * *'
 
 jobs:
   cd:
